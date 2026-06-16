@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Oferta especial · Acesso Vitalício</title>
+<link rel="icon" href="./assets/img/img-01.png">
+<style>
+  :root{
+    --bg:#fdf7fb; --bg-soft:#fbe7f5; --card:#ffffff;
+    --ink:#1a1124; --ink-soft:#5a4d68; --ink-muted:#8a7d99;
+    --primary:#e91e8c; --primary-dark:#c2185b; --primary-light:#fbe7f5;
+    --accent:#a855f7; --success:#16a34a;
+    --gradient:linear-gradient(135deg,#e91e8c 0%,#a855f7 100%);
+    --border:rgba(233,30,140,0.14);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{
+    font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    background:var(--bg); color:var(--ink);
+    line-height:1.55; -webkit-font-smoothing:antialiased;
+    padding:0 18px;
+  }
+  .wrap{max-width:620px; margin:0 auto; padding:30px 0 60px}
+
+  .alert{
+    background:#fff; border:1px dashed rgba(233,30,140,0.35);
+    border-radius:12px; padding:13px 18px; text-align:center;
+    font-size:0.92rem; color:var(--primary-dark); font-weight:600;
+    margin-bottom:26px;
+  }
+
+  .eyebrow{
+    display:inline-block; font-size:0.72rem; font-weight:700;
+    letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--accent); margin-bottom:14px;
+  }
+  h1{
+    font-size:1.92rem; line-height:1.18; font-weight:800;
+    letter-spacing:-0.02em; margin-bottom:16px;
+  }
+  h1 .hl{color:var(--primary)}
+  .lead{font-size:1.06rem; color:var(--ink-soft); margin-bottom:30px}
+  .lead b{color:var(--ink)}
+
+  .head{text-align:center; margin-bottom:14px}
+
+  .offer-card{
+    background:var(--card); border:2px solid var(--primary);
+    border-radius:20px; padding:30px 26px 26px;
+    box-shadow:0 14px 40px rgba(233,30,140,0.13);
+    position:relative; margin-bottom:22px;
+  }
+  .ribbon{
+    position:absolute; top:-13px; left:50%; transform:translateX(-50%);
+    background:var(--gradient); color:#fff; font-size:0.74rem; font-weight:700;
+    letter-spacing:0.06em; text-transform:uppercase;
+    padding:6px 18px; border-radius:30px; white-space:nowrap;
+  }
+  .offer-title{font-size:1.28rem; font-weight:800; margin:6px 0 4px}
+  .offer-sub{font-size:0.93rem; color:var(--ink-muted); margin-bottom:20px}
+
+  .plan-list{list-style:none; margin:0 0 22px}
+  .plan-list li{
+    display:flex; gap:11px; align-items:flex-start;
+    font-size:0.97rem; padding:7px 0; color:var(--ink-soft);
+  }
+  .plan-list li b{color:var(--ink); font-weight:600}
+  .check{
+    flex-shrink:0; width:21px; height:21px; border-radius:50%;
+    background:var(--success); color:#fff; font-size:0.72rem;
+    display:flex; align-items:center; justify-content:center; margin-top:2px;
+  }
+
+  .price-row{
+    display:flex; align-items:baseline; justify-content:center;
+    gap:12px; margin-bottom:6px;
+  }
+  .price-old{font-size:1rem; color:var(--ink-muted); text-decoration:line-through}
+  .price-now{font-size:2.5rem; font-weight:800; color:var(--ink); letter-spacing:-0.02em}
+  .price-now small{font-size:1.1rem; font-weight:600}
+  .price-note{text-align:center; font-size:0.84rem; color:var(--ink-muted); margin-bottom:24px}
+
+  .btn-yes{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    width:100%; background:var(--gradient); color:#fff;
+    font-size:1.08rem; font-weight:700; text-decoration:none;
+    padding:18px 20px; border-radius:14px; text-align:center;
+    box-shadow:0 8px 22px rgba(233,30,140,0.32);
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-yes:hover{transform:translateY(-2px); box-shadow:0 12px 28px rgba(233,30,140,0.4)}
+  .btn-yes .arrow{width:20px;height:20px}
+
+  .secure{
+    text-align:center; font-size:0.82rem; color:var(--ink-muted);
+    margin-top:14px; display:flex; align-items:center; justify-content:center; gap:7px;
+  }
+
+  .decline{
+    display:block; text-align:center; margin-top:26px;
+    font-size:0.92rem; color:var(--ink-muted); text-decoration:none;
+    padding:10px;
+  }
+  .decline span{text-decoration:underline; text-underline-offset:3px}
+  .decline:hover{color:var(--ink-soft)}
+
+  @media (max-width:480px){
+    h1{font-size:1.6rem}
+    .price-now{font-size:2.1rem}
+    .offer-card{padding:28px 20px 22px}
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="alert">Calma! Sua compra ainda não foi finalizada.</div>
+
+    <div class="head">
+      <span class="eyebrow">Oferta única nesta página</span>
+      <h1>Que tal garantir o acesso <span class="hl">para sempre</span>?</h1>
+      <p class="lead">Você escolheu o plano de <b>3 meses</b>. Por menos de <b>R$ 5 a mais</b>, você troca por <b>acesso vitalício</b> e nunca mais perde o pack, com todas as atualizações que a gente lançar daqui pra frente já inclusas.</p>
+    </div>
+
+    <div class="offer-card">
+      <div class="ribbon">Upgrade recomendado</div>
+      <div class="offer-title">Acesso Vitalício ao Pack</div>
+      <div class="offer-sub">Pague uma vez, use para sempre.</div>
+
+      <ul class="plan-list">
+        <li><span class="check">✓</span><span><b>Acesso vitalício</b>, sem prazo de expiração</span></li>
+        <li><span class="check">✓</span><span><b>Todas as atualizações mensais</b> incluídas, sem pagar de novo</span></li>
+        <li><span class="check">✓</span><span>Pack completo com <b>+20.000 figurinhas</b> organizadas por nicho</span></li>
+        <li><span class="check">✓</span><span>Compatível com <b>iPhone e Android</b></span></li>
+        <li><span class="check">✓</span><span>Entrega imediata no seu e-mail</span></li>
+      </ul>
+
+      <div class="price-row">
+        <span class="price-old">R$ 19,99</span>
+        <span class="price-now"><small>R$</small> 10,99</span>
+      </div>
+      <div class="price-note">Pagamento único · Sem assinatura · Garantia de 7 dias</div>
+
+      <a class="btn-yes" href="https://checkout.korvex.com.br/checkout/cmqg27di60io601odlihwm9xh?offer=L3N7F2D">
+        Sim! Quero acesso vitalício
+        <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+      </a>
+
+      <div class="secure">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+        Pagamento 100% seguro
+      </div>
+    </div>
+
+    <a class="decline" href="https://checkout.korvex.com.br/checkout/cmqg27di60io601odlihwm9xh?offer=0D6XY5C">
+      Não, obrigada. <span>Prefiro continuar com o plano de 3 meses por R$ 5,99</span>
+    </a>
+
+  </div>
+</body>
+</html>
