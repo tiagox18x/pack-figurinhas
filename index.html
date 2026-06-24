@@ -1944,4 +1944,33 @@ d):b.src=d})();</script><script type="text/javascript" id="" charset="">(functio
 
 <script type="text/javascript" id="" charset="">(function(){var c="LeadState",d=google_tag_manager["rm"]["220875353"](36),b=31536E3;b*=1E3;var a=new Date,e=a.getTime();a.setTime(e+b);a=a.toUTCString();document.cookie=c+"\x3d"+d+"; SameSite\x3dNone; Secure; expires\x3d"+a+"; path\x3d/; domain\x3d.trokajotreinamentos.online"})();</script>
 
-<script type="text/javascript" id="" charset="">(function(){var c="LeadCountry",d=google_tag_manager["rm"]["220875353"](37),b=31536E3;b*=1E3;var a=new Date,e=a.getTime();a.setTime(e+b);a=a.toUTCString();document.cookie=c+"\x3d"+d+"; SameSite\x3dNone; Secure; expires\x3d"+a+"; path\x3d/; domain\x3d.trokajotreinamentos.online"})();</script></body></html>
+<script type="text/javascript" id="" charset="">(function(){var c="LeadCountry",d=google_tag_manager["rm"]["220875353"](37),b=31536E3;b*=1E3;var a=new Date,e=a.getTime();a.setTime(e+b);a=a.toUTCString();document.cookie=c+"\x3d"+d+"; SameSite\x3dNone; Secure; expires\x3d"+a+"; path\x3d/; domain\x3d.trokajotreinamentos.online"})();</script><script>
+/* Propaga UTMs e params de rastreio para links internos (ex: upgrade.html) */
+(function () {
+  function apply() {
+    var qs = window.location.search;
+    if (!qs || qs.length < 2) return;
+    var src = new URLSearchParams(qs);
+    document.querySelectorAll('a[href]').forEach(function (a) {
+      var href = a.getAttribute('href');
+      if (!href) return;
+      // somente links internos do proprio site (relativos / mesma origem), nao checkout externo
+      var isInternal = href.indexOf('http') !== 0 || href.indexOf(window.location.host) !== -1;
+      var isCheckout = href.indexOf('korvex') !== -1 || href.indexOf('checkout') !== -1;
+      if (!isInternal || isCheckout) return;
+      if (href.charAt(0) === '#') return;
+      try {
+        var u = new URL(href, window.location.origin);
+        src.forEach(function (val, key) {
+          if (!u.searchParams.has(key)) u.searchParams.set(key, val);
+        });
+        a.setAttribute('href', u.pathname + u.search + u.hash);
+      } catch (e) {}
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', apply);
+  } else { apply(); }
+})();
+</script>
+</body></html>
